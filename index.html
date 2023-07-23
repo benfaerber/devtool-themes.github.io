@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-dark theme-light">
+  <head>
+    <title>Firefox DevTools Theme Maker</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="build/global.css" rel="stylesheet" />
+    <link href="build/coloris.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Firefox DevTools Theme Maker</h1>
+    <div class="theme-selection-container">
+      <select id="theme-selection"></select>
+    </div>
+    <div class="main-container row">
+      <div class="controls column">
+        <div class="control-section">
+          <h3>Text Colors</h3>
+          <div class="color-picker">
+            <label for="theme-text-selection">Selection:</label>
+            <input id="theme-text-selection" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-text-splitter">Splitter:</label>
+            <input id="theme-text-splitter" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-text-comment">Comment:</label>
+            <input id="theme-text-comment" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-text-body">Body:</label>
+            <input id="theme-text-body" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-text-body-alt">Body Alt:</label>
+            <input id="theme-text-body-alt" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-text-content-1">Content 1:</label>
+            <input id="theme-text-content-1" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-text-content-2">Content 2:</label>
+            <input id="theme-text-content-2" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-text-content-3">Content 3:</label>
+            <input id="theme-text-content-3" type="text" data-coloris />
+          </div>
+        </div>
+
+        <div class="control-section">
+          <h3>Background Colors</h3>
+          <div class="color-picker">
+            <label for="theme-background-tab-toolbar">Tab Toolbar:</label>
+            <input id="theme-background-tab-toolbar" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-background-toolbar">Toolbar:</label>
+            <input id="theme-background-toolbar" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-background-selection">Selection:</label>
+            <input id="theme-background-selection" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-background-body">Body:</label>
+            <input id="theme-background-body" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-background-sidebar">Sidebar:</label>
+            <input id="theme-background-sidebar" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-background-contrast">Contrast:</label>
+            <input id="theme-background-contrast" type="text" data-coloris />
+          </div>
+        </div>
+
+        <div class="control-section">
+          <h3>Highlight Colors</h3>
+
+          <div class="color-picker">
+            <label for="theme-highlight-blue">Blue:</label>
+            <input id="theme-highlight-blue" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-highlight-purple">Purple:</label>
+            <input id="theme-highlight-purple" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-highlight-pink">Pink:</label>
+            <input id="theme-highlight-pink" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-highlight-red">Red:</label>
+            <input id="theme-highlight-red" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-highlight-orange">Orange:</label>
+            <input id="theme-highlight-orange" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-highlight-light-orange">Light Orange:</label>
+            <input id="theme-highlight-light-orange" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-highlight-green">Green:</label>
+            <input id="theme-highlight-green" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-highlight-blue-grey">Blue Grey:</label>
+            <input id="theme-highlight-blue-grey" type="text" data-coloris />
+          </div>
+          <div class="color-picker">
+            <label for="theme-highlight-yellow">Yellow:</label>
+            <input id="theme-highlight-yellow" type="text" data-coloris />
+          </div>
+        </div>
+      </div>
+
+      <div class="preview-container column">
+        <h2>Devtools Preview</h2>
+        <code class="preview">
+          <div class="toolbar">
+            <div class="toolbar-tab selected">Inspector</div>
+            <div class="toolbar-tab">Console</div>
+            <div class="toolbar-tab">Debugger</div>
+          </div>
+          <hr class="splitter" />
+          <pre>
+          <span class="text-doctype"><i>&lt;!DOCTYPE html&gt;</i></span>
+          <span class="text-head">&lt;head&gt;</span>
+          <span class="text-head">&lt;title&gt;</span>Peter Piper<span class="text-head">&lt/title&gt;</span>
+          <span class="text-head">&lt;link href=&quot;<span class="muted-link">css/style.css</span>&quot; rel=&quot;stylesheet&quot;&gt;</span>
+          <span class="text-head">&lt;/head&gt;</span>
+
+          &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="string">&quot;preview&quot;</span>&gt;
+            &lt;<span class="tag">div</span> <span class="attr">id</span>=<span class="string">&quot;banner&quot;</span>&gt;
+            &lt;<span class="tag">h1</span>&gt;peter piper&lt;/<span class="tag">h1</span>&gt;
+            &lt;<span class="tag">h2</span>&gt;picked a peck of pickled peppers&lt;/<span class="tag">h2</span>&gt;
+            &lt;/<span class="tag">div&gt;</span>
+            &lt;<span class="tag">div</span> <span class="attr">class</span>=<span class="string">&quot;section&quot;</span>&gt;
+              &lt;<span class="tag">p</span>&gt;
+                Peter Piper picked a peck of pickled peppers.
+                A peck of pickled peppers Peter Piper picked.
+                If Peter Piper picked a peck of pickled peppers,
+                Where's the peck of pickled peppers Peter Piper picked?
+                <span class="text-selected">I am selected</span>
+              &lt;/<span class="tag">p</span>&gt;
+            &lt;/<span class="tag">div</span>&gt;
+            <span class="comment">&lt;!-- This is a comment --&gt;</span>
+            &lt;<span class="tag">div</span> <span class="attr">id</span>=<span class="string">&quot;footer&quot;</span>&gt;
+              &lt;<span class="tag">p</span>&gt; © Peter Piper 2019&lt;/<span class="tag">p</span>&gt;
+            &lt;/<span class="tag">div</span>&gt;
+          &lt;/<span class="tag">div</span>&gt;
+          </pre>
+        </code>
+      </div>
+    </div>
+
+    <h2>Content for userContent.css</h2>
+    <div class="output-container">
+      <textarea readonly class="output" id="output"> </textarea>
+    </div>
+
+    <h2>How to Install</h2>
+    <ul>
+      <li>
+        Download your <code>userChrome.css</code> and <code>userContent.css</code> using this tool
+      </li>
+      <li>
+        Enter <code>about:config</code> in the Firefox address bar and click <code>Accept the risk and continue</code> after reading the warning.
+      </li>
+      <li>
+        To enable <code>userChrome.css</code> and <code>userContent.css</code> custom stylesheets enter this command in the search bar:
+        <code>toolkit.legacyUserProfileCustomizations.stylesheets</code>, then double click the property to toggle it to true.
+        <img class="tutorial-img" src="imgs/">
+        You can now close this window.
+      </li>
+      <li>
+        Enter <code>about:profiles</code> in the Firefox address bar. Find your root user profile and click <code>Open Folder</code>.
+        <img class="tutorial-img" src="imgs/">
+      </li>
+      <li>
+        Drag the 2 css files into the chrome folder.
+        <img class="tutorial-img" src="imgs/">
+      </li>
+      <li>
+        Return to the <code>about:profiles</code> page and click <code>Restart Normally</code>
+      </li>
+      <li>
+        Once Firefox restarts, open your devtools. If they still look the same try restarting your computer and double check you followed this guide correctly. Enjoy!
+      </li>
+    </ul>
+
+    <script src="build/coloris.js"></script>
+    <script async type="module" src="build/theme.js"></script>
+    <style id="theme-css"></style>
+  </body>
+</html>

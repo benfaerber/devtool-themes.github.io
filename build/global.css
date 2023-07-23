@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-container {
+  align-items: center;
+  justify-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+code.preview, code.preview pre {
+  background-color: var(--test-theme-body-background);
+  color: var(--test-theme-body-color);
+}
+
+code.preview hr, code.preview pre {
+  padding: 0;
+  margin: 0;
+}
+
+code.preview pre .tag {
+  color: var(--test-theme-highlight-blue);
+}
+
+code.preview pre .attr {
+  color: var(--test-theme-highlight-red);
+}
+
+code.preview pre .string {
+  color: var(--test-theme-highlight-purple);
+}
+
+
+code.preview pre .comment {
+  color: var(--test-theme-comment);
+}
+
+code.preview pre .text-doctype {
+  color: var(--test-theme-content-color3);
+}
+
+code.preview pre .text-head {
+  opacity: 0.5;
+}
+
+code.preview pre .muted-link {
+  text-decoration: underline;
+}
+
+code.preview pre::selection, code.preview span::selection, code.preview .text-selected {
+  color: var(--test-theme-selection-color) !important;
+  background-color: var(--test-theme-selection-background) !important;
+}
+
+code.preview .toolbar {
+  display: flex;
+  background-color: var(--test-theme-tab-toolbar-background);
+  padding: 10px;
+}
+
+code.preview .toolbar-tab {
+  background-color: var(--test-theme-tab-toolbar-background);
+  padding: 10px;
+}
+
+code.preview .toolbar-tab.selected {
+
+}
+
+.output-container {
+  width: 100%;
+  height: fit-content;
+}
+
+.output {
+  width: 95%;
+  resize: none;
+}
