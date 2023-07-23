@@ -36,6 +36,8 @@ const outputCss = document.querySelector('#output');
 const themeSelector = document.querySelector('#theme-selection');
 const downloadUserChrome = document.querySelector('#download-user-chrome');
 const downloadUserContent = document.querySelector('#download-user-content');
+const downloadUserChromeTutorial = document.querySelector('#download-user-chrome-tutorial');
+const downloadUserContentTutorial = document.querySelector('#download-user-content-tutorial');
 function applyToEachElement(elems, theme = null, apply) {
     for (const [sectionName, section] of Object.entries(elems)) {
         for (const [elemName, elem] of Object.entries(section)) {
@@ -51,6 +53,7 @@ function setTheme(elems, theme) {
     outputCss.style.height = 'auto';
     outputCss.style.height = `${outputCss.scrollHeight}px`;
     downloadFileOnClick(downloadUserContent, 'userContent.css', devtoolsCss);
+    downloadFileOnClick(downloadUserContentTutorial, 'userContent.css', devtoolsCss);
 }
 function getTheme(elems) {
     const builtTheme = {};
@@ -98,6 +101,7 @@ function init() {
     populateThemeSelector(defaultThemes);
     initElements(elements);
     downloadFileOnClick(downloadUserChrome, 'userChrome.css', '');
+    downloadFileOnClick(downloadUserChromeTutorial, 'userChrome.css', '');
 }
 console.log(elements);
 init();
