@@ -163,10 +163,13 @@
     <h2>Content for userContent.css</h2>
     <div class="output-container">
       <textarea readonly class="output" id="output"> </textarea>
+      <a id="download-user-chrome">Download userChrome.css</a>
+      <a id="download-user-content">Download userContent.css</a>
     </div>
 
     <h2>How to Install</h2>
-    <ul>
+    <div class="tutorial">
+    <ol>
       <li>
         Download your <code>userChrome.css</code> and <code>userContent.css</code> using this tool
       </li>
@@ -176,24 +179,26 @@
       <li>
         To enable <code>userChrome.css</code> and <code>userContent.css</code> custom stylesheets enter this command in the search bar:
         <code>toolkit.legacyUserProfileCustomizations.stylesheets</code>, then double click the property to toggle it to true.
-        <img class="tutorial-img" src="imgs/">
+        <img class="tutorial-img" src="imgs/about-config.png">
         You can now close this window.
       </li>
       <li>
         Enter <code>about:profiles</code> in the Firefox address bar. Find your root user profile and click <code>Open Folder</code>.
-        <img class="tutorial-img" src="imgs/">
+        <img class="tutorial-img" src="imgs/about-profiles.png">
       </li>
       <li>
         Drag the 2 css files into the chrome folder.
-        <img class="tutorial-img" src="imgs/">
+        <img class="tutorial-img" src="imgs/chrome-folder.png">
       </li>
       <li>
         Return to the <code>about:profiles</code> page and click <code>Restart Normally</code>
+        <img class="tutorial-img" src="imgs/restart-firefox.png">
       </li>
-      <li>
+    </ol>
+      <div> 
         Once Firefox restarts, open your devtools. If they still look the same try restarting your computer and double check you followed this guide correctly. Enjoy!
-      </li>
-    </ul>
+      </div>
+    </div>
 
     <script src="build/coloris.js"></script>
     <script async type="module" src="build/theme.js"></script>

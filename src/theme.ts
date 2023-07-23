@@ -38,6 +38,11 @@ const elements: Theme<HTMLInputElement> = {
 const themeCss = document.querySelector('#theme-css') as HTMLStyleElement
 const outputCss = document.querySelector('#output') as HTMLTextAreaElement
 const themeSelector = document.querySelector('#theme-selection') as HTMLSelectElement
+const downloadUserChrome = document.querySelector('#download-user-chrome') as HTMLLinkElement 
+const downloadUserContent = document.querySelector('#download-user-content') as HTMLLinkElement 
+
+const downloadUserChromeTutorial = document.querySelector('#download-user-chrome-tutorial') as HTMLLinkElement 
+const downloadUserContentTutorial = document.querySelector('#download-user-content-tutorial') as HTMLLinkElement 
 
 function applyToEachElement(elems: Theme<HTMLInputElement>, theme: Theme<string>|null = null, apply: (elem: HTMLInputElement, color: string|null) => void) {
   for (const [sectionName, section] of Object.entries(elems)) {
@@ -50,9 +55,12 @@ function applyToEachElement(elems: Theme<HTMLInputElement>, theme: Theme<string>
 function setTheme(elems: Theme<HTMLInputElement>, theme: ThemeData<string>) {
   applyToEachElement(elems, theme.theme, (elem, color) => elem.value = color)
   themeCss.innerHTML = constructThemeCss(theme, 'browser')
-  outputCss.value = constructThemeCss(theme, 'devtools')
+  const devtoolsCss = constructThemeCss(theme, 'devtools')
+  outputCss.value = devtoolsCss
   outputCss.style.height = 'auto'
   outputCss.style.height = `${outputCss.scrollHeight}px`
+  downloadFileOnClick(downloadUserContent, 'userContent.css', devtoolsCss)
+  downloadFileOnClick(downloadUserContentTutorial, 'userContent.css', devtoolsCss)
 }
 
 function getTheme(elems: Theme<HTMLInputElement>): Theme<string> {
@@ -92,6 +100,12 @@ function onSelectTheme() {
   setTheme(elements, themeData)
 }
 
+function downloadFileOnClick(button: HTMLLinkElement, fileName: string, content: string) {
+  const encodedData = `data:text/plain;charset=utf-8,${encodeURIComponent(content)}`
+  button.setAttribute('href', encodedData)
+  button.setAttribute('download', fileName)
+}
+
 function initElements(elems: Theme<HTMLInputElement>) {
   applyToEachElement(elems, null, (elem) => elem.addEventListener('input', onColorChange))
   themeSelector.addEventListener('change', onSelectTheme)
@@ -101,6 +115,8 @@ function initElements(elems: Theme<HTMLInputElement>) {
 function init() {
   populateThemeSelector(defaultThemes)
   initElements(elements)
+  downloadFileOnClick(downloadUserChrome, 'userChrome.css', '')
+  downloadFileOnClick(downloadUserChromeTutorial, 'userChrome.css', '')
 }
 
 console.log(elements)

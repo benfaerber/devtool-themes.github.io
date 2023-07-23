@@ -34,6 +34,8 @@ const elements = {
 const themeCss = document.querySelector('#theme-css');
 const outputCss = document.querySelector('#output');
 const themeSelector = document.querySelector('#theme-selection');
+const downloadUserChrome = document.querySelector('#download-user-chrome');
+const downloadUserContent = document.querySelector('#download-user-content');
 function applyToEachElement(elems, theme = null, apply) {
     for (const [sectionName, section] of Object.entries(elems)) {
         for (const [elemName, elem] of Object.entries(section)) {
@@ -44,9 +46,11 @@ function applyToEachElement(elems, theme = null, apply) {
 function setTheme(elems, theme) {
     applyToEachElement(elems, theme.theme, (elem, color) => elem.value = color);
     themeCss.innerHTML = constructThemeCss(theme, 'browser');
-    outputCss.value = constructThemeCss(theme, 'devtools');
+    const devtoolsCss = constructThemeCss(theme, 'devtools');
+    outputCss.value = devtoolsCss;
     outputCss.style.height = 'auto';
     outputCss.style.height = `${outputCss.scrollHeight}px`;
+    downloadFileOnClick(downloadUserContent, 'userContent.css', devtoolsCss);
 }
 function getTheme(elems) {
     const builtTheme = {};
@@ -80,6 +84,11 @@ function onSelectTheme() {
     const themeData = JSON.parse(selected.dataset.themeData);
     setTheme(elements, themeData);
 }
+function downloadFileOnClick(button, fileName, content) {
+    const encodedData = `data:text/plain;charset=utf-8,${encodeURIComponent(content)}`;
+    button.setAttribute('href', encodedData);
+    button.setAttribute('download', fileName);
+}
 function initElements(elems) {
     applyToEachElement(elems, null, (elem) => elem.addEventListener('input', onColorChange));
     themeSelector.addEventListener('change', onSelectTheme);
@@ -88,6 +97,7 @@ function initElements(elems) {
 function init() {
     populateThemeSelector(defaultThemes);
     initElements(elements);
+    downloadFileOnClick(downloadUserChrome, 'userChrome.css', '');
 }
 console.log(elements);
 init();

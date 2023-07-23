@@ -1,9 +1,12 @@
 export function constructThemeCss(themeData, usedFor) {
     const { background, text, highlight } = themeData.theme;
     const prefix = usedFor === 'browser' ? 'test-' : '';
-    return `/*
- * Variables for devtools are available at: https://developer.mozilla.org/en-US/docs/Tools/DevToolsColors
- */
+    return `
+/*
+* Theme Name: ${themeData.name}
+* Created with Ben's Firefox Devtools Theme Maker
+* Variables for devtools are available at: https://developer.mozilla.org/en-US/docs/Tools/DevToolsColors
+*/
 
 :root.theme-${themeData.themeType} {
   /*
@@ -58,10 +61,10 @@ export const defaultThemeDark = {
             contrast: '#b28025',
         },
         text: {
-            selection: '#f5f7fa ',
+            selection: '#f5f7fa',
             splitter: '#000000',
             comment: '#5c6773',
-            body: '#14171a',
+            body: '#8fa1b2 ',
             bodyAlt: '#b6babf',
             content1: '#a9bacb',
             content2: '#8fa1b2',
@@ -117,7 +120,7 @@ export const defaultThemeLight = {
     themeType: 'light',
 };
 export const oneMonokaiThemeDark = {
-    name: 'Ben\'s One Monokai Theme',
+    name: 'One Monokai',
     theme: {
         background: {
             tabToolbar: '#252c33 ',
