@@ -53,7 +53,10 @@ function applyToEachElement(elems: Theme<HTMLInputElement>, theme: Theme<string>
 }
 
 function setTheme(elems: Theme<HTMLInputElement>, theme: ThemeData<string>) {
-  applyToEachElement(elems, theme.theme, (elem, color) => elem.value = color)
+  applyToEachElement(elems, theme.theme, (elem, color) => {
+    elem.value = color
+    //elem.dispatchEvent(new Event('input', { bubbles: true }))
+  })
   themeCss.innerHTML = constructThemeCss(theme, 'browser')
   const devtoolsCss = constructThemeCss(theme, 'devtools')
   outputCss.value = devtoolsCss

@@ -46,7 +46,10 @@ function applyToEachElement(elems, theme = null, apply) {
     }
 }
 function setTheme(elems, theme) {
-    applyToEachElement(elems, theme.theme, (elem, color) => elem.value = color);
+    applyToEachElement(elems, theme.theme, (elem, color) => {
+        elem.value = color;
+        //elem.dispatchEvent(new Event('input', { bubbles: true }))
+    });
     themeCss.innerHTML = constructThemeCss(theme, 'browser');
     const devtoolsCss = constructThemeCss(theme, 'devtools');
     outputCss.value = devtoolsCss;
